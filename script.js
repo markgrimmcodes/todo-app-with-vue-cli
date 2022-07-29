@@ -3,15 +3,19 @@ Vue.createApp({
     return {
       inputFieldText: "",
       todos: [],
-      checked: false,
     };
   },
   methods: {
     addTodo() {
-      this.todos.push(this.inputFieldText);
+      this.todos.push({
+        text: this.inputFieldText,
+        done: false,
+      });
       this.inputFieldText = "";
-      console.log(this.todos[0]);
+      console.log(this.todos);
     },
-    removeDoneTodos() {},
+    removeDoneTodos() {
+      this.todos = this.todos.filter((todo) => !todo.done);
+    },
   },
 }).mount("#app");

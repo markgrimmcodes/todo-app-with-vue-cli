@@ -29,7 +29,9 @@
       <button @click="removeDoneTodos">Remove Done Todos</button>
       <h2>Your Todos</h2>
       <ul>
-        <li v-for="todo of todos"><input type="checkbox" /> {{todo}}</li>
+        <li v-for="todo of todos">
+          <input type="checkbox" v-model="todo.done" /> {{todo.text}}
+        </li>
       </ul>
     </main>
     <script src="https://unpkg.com/vue@next"></script>
