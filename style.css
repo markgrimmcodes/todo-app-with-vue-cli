@@ -15,6 +15,7 @@
   --shadow-color-bright: rgb(211, 154, 69);
   --shadow-color-dark: rgb(10, 80, 74);
   --bg-color-main: rgba(220, 220, 220, 0.459);
+  --button-text-color: snow;
   font-weight: bold;
 }
 /*SPECIFIC STYLINGS*/
@@ -31,7 +32,7 @@
 h1 {
   font-size: 3rem;
   padding: 2rem;
-  color: snow;
+  color: var(--button-text-color);
   text-shadow: 2px 2px var(--shadow-color-dark),
     4px 4px var(--shadow-color-bright);
 
@@ -74,7 +75,7 @@ h1 {
   background-color: var(--button-color);
   padding: 0.5rem;
   border-radius: 4px;
-  color: snow;
+  color: var(--button-text-color);
   box-shadow: 2px 2px var(--bg-color);
   transition: 0.2s ease;
 }
@@ -123,7 +124,7 @@ h2 {
   background-color: var(--button-color);
   padding: 0.5rem;
   border-radius: 4px;
-  color: snow;
+  color: var(--button-text-color);
   box-shadow: 2px 2px var(--bg-color);
   width: fit-content;
   transition: 0.2s ease-in;
@@ -139,10 +140,11 @@ h2 {
   flex-direction: column;
   padding: 2rem;
   gap: 1rem;
+  position: relative;
 }
 li {
   list-style: none;
-  background-color: snow;
+  background-color: var(--button-text-color);
   margin-bottom: 1rem;
   padding: 0.5rem;
   display: flex;
