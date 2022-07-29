@@ -4,9 +4,13 @@ Vue.createApp({
       inputFieldText: "",
       todos: [],
       filterMode: "all",
+      buttonState: true,
     };
   },
   computed: {
+    todoLength() {
+      return this.inputFieldText.length;
+    },
     filteredTodoList() {
       let filteredTodos = [];
       if (this.filterMode === "all") {
@@ -27,10 +31,22 @@ Vue.createApp({
       });
 
       this.inputFieldText = "";
-      console.log(this.filterMode);
     },
     removeDoneTodos() {
       this.todos = this.todos.filter((todo) => !todo.done);
+    },
+  },
+  watch: {
+    inputFieldText(current) {
+      if (current.length >= 5) {
+        if (this.buttonState !== false) {
+          this.buttonState = false;
+        }
+      } else {
+        if (this.buttonState !== true) {
+          this.buttonState = true;
+        }
+      }
     },
   },
 }).mount("#app");
