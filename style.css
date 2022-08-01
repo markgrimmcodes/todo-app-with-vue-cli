@@ -90,6 +90,8 @@ h1 {
 }
 h2 {
   font-size: 1.5rem;
+
+  width: 250px;
 }
 .radio_wrap {
   display: flex;
@@ -140,7 +142,6 @@ h2 {
   flex-direction: column;
   padding: 2rem;
   gap: 1rem;
-  position: relative;
 }
 li {
   list-style: none;

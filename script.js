@@ -25,12 +25,15 @@ Vue.createApp({
   },
   methods: {
     addTodo() {
-      this.todos.push({
-        text: this.inputFieldText,
-        done: false,
-      });
+      if (this.todoLength >= 5) {
+        this.todos.push({
+          text: this.inputFieldText,
+          done: false,
+        });
 
-      this.inputFieldText = "";
+        this.inputFieldText = "";
+        console.log(this.todos);
+      }
     },
     removeDoneTodos() {
       this.todos = this.todos.filter((todo) => !todo.done);
@@ -48,5 +51,15 @@ Vue.createApp({
         }
       }
     },
+    todos: {
+      handler() {
+        localStorage.setItem("todos", JSON.stringify(this.todos));
+      },
+      deep: true,
+    },
+  },
+  mounted() {
+    if (localStorage.getItem("todos"))
+      this.todos = JSON.parse(localStorage.getItem("todos"));
   },
 }).mount("#app");
