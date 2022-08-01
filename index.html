@@ -37,6 +37,7 @@
             type="radio"
             name="filter"
             id="all"
+            checked="true"
           />
           <label for="all">All</label>
         </div>
@@ -63,7 +64,7 @@
         </button>
       </div>
       <div class="todo_wrap">
-        <h2>Your Todos</h2>
+        <h2 id="todos_header">Your Todos</h2>
         <ul>
           <li v-for="todo of filteredTodoList">
             <input type="checkbox" v-model="todo.done" />
